@@ -62,7 +62,6 @@ jobs:
           EXPOSE 8080
           EOF
       - run: |
-          cat dockerfile
           docker build -t blueassemble/0929:test-ver1 --file dockerfile
               
 
