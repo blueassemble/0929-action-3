@@ -61,9 +61,8 @@ jobs:
           COPY ./my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
           EXPOSE 8080
           EOF
-      - run: cat dockerfile
-          
-          #docker build -t blueassemble/0929:test-ver1 .
+      - run: |          
+          docker build -t blueassemble/0929:test-ver1 -f dockerfile
               
 
       - name: Upload image
