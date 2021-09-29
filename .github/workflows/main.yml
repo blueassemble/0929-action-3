@@ -43,4 +43,11 @@ jobs:
         with:
           name: WAR
       - run: ls -R
+      - run: |
+          docker build -t <<EOF
+          FROM tomcat:9.0
+          EXPOSE 8080
+          EOF
+      - run: docker images
+      
          
