@@ -42,7 +42,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: WAR
-      - name: test          
+         
         
       #- name: unzip artifact packages
        # run: unzip ./WAR
