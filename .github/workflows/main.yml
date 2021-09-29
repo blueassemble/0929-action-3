@@ -44,7 +44,7 @@ jobs:
           name: WAR
       - run: ls -R
       - run: |
-          docker build -t blueassemble/0929:test-ver1 <<EOF
+          docker build -t blueassemble/0929:test-ver1 -<<EOF
           FROM tomcat:9.0
           EXPOSE 8080
           EOF
