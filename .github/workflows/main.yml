@@ -43,7 +43,11 @@ jobs:
         with:
           name: WAR
       - name: test
-        run: ls -R
+        run: |
+          pwd
+          ls -R
+          
+        
       #- name: unzip artifact packages
        # run: unzip ./WAR
         
