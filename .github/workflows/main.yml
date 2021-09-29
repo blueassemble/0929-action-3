@@ -54,6 +54,7 @@ jobs:
            
       - name: Build image
         run: |
+          touch dockerfile
           cat dockerfile -<<EOF
           FROM tomcat:9.0
           WORKDIR /home/runner/work/0929-action-3/0929-action-3
