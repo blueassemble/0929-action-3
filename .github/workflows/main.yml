@@ -62,12 +62,12 @@ jobs:
           EXPOSE 8080
           EOF
       - run: |
-          ls -R
           cat dockerfile
+          docker build -t blueassemble/0929:test-ver1 --file dockerfile
               
 
-      #- name: Upload image
-       # uses: actions/upload-artifact@v2
-        #with:
-         # image: "blueassemble/0929:test-ver1"
+      - name: Upload image
+        uses: actions/upload-artifact@v2
+        with:
+          image: "blueassemble/0929:test-ver1"
 
