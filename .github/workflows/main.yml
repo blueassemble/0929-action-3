@@ -62,7 +62,7 @@ jobs:
           EXPOSE 8080
           EOF
       - run: |          
-          docker build -t blueassemble/0929:test-ver1 -f dockerfile
+          docker build -t blueassemble/0929:test-ver1 -f dockerfile .
               
 
       - name: Upload image
