@@ -42,18 +42,20 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: WAR
+      - name: unzip artifact packages
+        run: unzip ./WAR
         
            
       #- name: Build image
-        #run: |
-         # docker build -t blueassemble/0929:test-ver1 -<<EOF
-          #FROM tomcat:9.0
-          #COPY build/libs/my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
-          #EXPOSE 8080
-          #EOF
+      #  run: |
+      #    docker build -t blueassemble/0929:test-ver1 -<<EOF
+      #    FROM tomcat:9.0
+      #    COPY build/libs/my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+      #    EXPOSE 8080
+      #    EOF
 
       #- name: Upload image
        # uses: actions/upload-artifact@v2
         #with:
-          image: "blueassemble/0929:test-ver1"
+         # image: "blueassemble/0929:test-ver1"
 
