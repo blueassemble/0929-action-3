@@ -42,11 +42,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: WAR
-      - name: test
-        run: |
-          pwd
-          ls -R
-          
+      - name: test          
         
       #- name: unzip artifact packages
        # run: unzip ./WAR
@@ -61,6 +57,9 @@ jobs:
           COPY ./my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
           EXPOSE 8080
           EOF
+      - run: |
+          pwd
+          ls -R
       - run: |          
           docker build -t blueassemble/0929:test-ver1 -f dockerfile .
               
