@@ -54,15 +54,19 @@ jobs:
            
       - name: Build image
         run: |
-          docker build -t blueassemble/0929:test-ver1 -<<EOF
+          cat dockerfile -<<EOF
           FROM tomcat:9.0
           WORKDIR /home/runner/work/0929-action-3/0929-action-3
           COPY ./my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
           EXPOSE 8080
           EOF
+      - run: |
+          ls -R
+          cat dockerfile
+              
 
-      - name: Upload image
-        uses: actions/upload-artifact@v2
-        with:
-          image: "blueassemble/0929:test-ver1"
+      #- name: Upload image
+       # uses: actions/upload-artifact@v2
+        #with:
+         # image: "blueassemble/0929:test-ver1"
 
