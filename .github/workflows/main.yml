@@ -34,8 +34,23 @@ jobs:
       - run: chmod +x ./gradlew
       #- run: ./my-spring-board/gradlew clean
       - run: ./gradlew build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: WAR
-          path: build/libs
+      #- uses: actions/upload-artifact@v2
+        #with:
+          #name: WAR
+          #path: build/libs
       #- run: cp ./my-spring-board/build/libs/*.war ./dockerfile
+           
+      - name: Build image
+        run: |
+          docker build -t blueassemble/0929:test-ver1 -<<EOF
+          FROM tomcat
+          FROM tomcat:9.0
+          COPY ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+          EXPOSE 8080
+          EOF
+
+      - name: Upload image
+        uses: actions/upload-artifact@v2
+        with:
+          image: "blueassemble/0929:test-ver1"
+
