@@ -46,6 +46,7 @@ jobs:
       - run: |
           docker build -t blueassemble/0929:test-ver1 -<<EOF
           FROM tomcat:9.0
+          COPY my-spring-board-0.0.1-SNAPSHOT.war .
           EXPOSE 8080
           EOF
       - run: docker images
